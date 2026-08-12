@@ -1,0 +1,22 @@
+[
+  { "query": "Can you build the SEO section of my biweekly client agenda for acme.com? The meeting is Thursday and I need clicks/impressions/position for the last 2 weeks and 3 months vs. the previous period.", "should_trigger": true },
+  { "query": "I need to prep my SEO recap for the Northwind account — pull GSC and show me how the recently published blogs are doing.", "should_trigger": true },
+  { "query": "what should I present this week for the Contoso SEO meeting?", "should_trigger": true },
+  { "query": "Draft the AEO/SEO update for our client meeting; I'll paste the Ahrefs Site Explorer and Brand Radar screenshots in a sec.", "should_trigger": true },
+  { "query": "do a monthly SEO performance review for globex.io and explain why organic clicks are down", "should_trigger": true },
+  { "query": "hey can u throw together the seo update for my client mtg tmrw — need the gsc numbers and a reason traffic dipped", "should_trigger": true },
+  { "query": "Update the running SEO agenda doc for Initech with this period's numbers and the outstanding items from our last call.", "should_trigger": true },
+  { "query": "Analyze SEO for umbrella.com and write it up like a client agenda section — with the wins and what's next.", "should_trigger": true },
+  { "query": "How are Stark Industries' newest blog posts performing in search? Want it for the biweekly.", "should_trigger": true },
+  { "query": "Put together the SEO/AEO recap for the Wayne Enterprises QBR — GSC trends, AI Overview citations, and recommendations.", "should_trigger": true },
+  { "query": "Pull our Google Ads performance for last month — spend, CPA, conversions by campaign — for the client deck.", "should_trigger": false },
+  { "query": "Write a 1,500-word blog post targeting 'product portfolio management for manufacturers'.", "should_trigger": false },
+  { "query": "Do an AI Overview content audit for the keyword 'contract manufacturing visibility' — which competitors get cited and what sections should our article have?", "should_trigger": false },
+  { "query": "Can you find me 30 keyword ideas with volume and difficulty for a new SaaS onboarding topic cluster?", "should_trigger": false },
+  { "query": "Crawl acme.com and give me the technical SEO issues — broken links, duplicate titles, non-indexable pages.", "should_trigger": false },
+  { "query": "Summarize our last Gong call with the Northwind client and list the action items.", "should_trigger": false },
+  { "query": "Build a Looker Studio dashboard that shows GA4 sessions and conversions by channel for the client.", "should_trigger": false },
+  { "query": "What's a good meta description length and should I use H2s for SEO?", "should_trigger": false },
+  { "query": "Give me a list of high-DR sites to pitch for backlinks for globex.io.", "should_trigger": false },
+  { "query": "Pull GA4 organic traffic for umbrella.com for the last 90 days and compare to last year.", "should_trigger": false }
+]
