@@ -2,7 +2,8 @@
 name: blog-int-linking
 description: >-
   Audits and optimizes the internal links of a single article on a client's site — building the
-  real internal-link universe from the live sitemap first, preserving every existing link,
+  real internal-link universe from the live sitemap first, preserving every working link,
+  auto-replacing broken ones with a relevant substitute (same spot or wherever it fits naturally),
   verifying each destination is live and actually supports the claim it's anchored to, adding
   contextual links with an explicit mix — blog topic-cluster siblings carry the count, and every
   genuinely relevant service/product page gets linked at its natural in-body mention — and
@@ -57,9 +58,15 @@ For every internal link already in the article:
 1. **Verify the destination resolves.** Caveat: a `curl` 403/405 is usually WAF/bot-blocking, not a
    dead link — confirm with a browser-UA GET or WebFetch before treating it as broken. Never replace
    a good link just because curl was blocked.
-2. **NEVER remove an existing internal link.** Fix broken/redirected hrefs in place to the canonical
-   URL. If the destination is gone with no equivalent, flag for human review — do not silently
-   delete or stealth-substitute a different destination.
+2. **Never remove a WORKING internal link.** Redirected hrefs get fixed in place to the canonical
+   URL. A genuinely broken link (destination confirmed gone, not just WAF-blocked) may be removed —
+   but only as part of an automatic replacement: find a suitable substitute from the Step 1 universe
+   and add it yourself, don't leave a hole. The replacement must still be a relevant, helpful link
+   for the reader — never a filler URL to keep the count. It can take the broken link's spot when the
+   sentence still supports it, but it doesn't have to: if the old anchor's context doesn't fit the
+   new destination, place the replacement wherever in the body it reads naturally instead. Record
+   every swap in the output (old URL → new URL + placement). Only when NO relevant replacement exists
+   in the universe does the broken link get flagged for human review instead.
 3. **AI-draft exception:** when the draft came from ClickFlow or another generator, every internal
    link is presumed fabricated. Re-derive each one from the Step 1 universe and the real slug
    pattern; keep none unverified.
@@ -168,7 +175,7 @@ Report the link work in this structure (in chat, and in the change summary if on
 internal_links:
   preserved:   [{url, anchor, section}]
   added:       [{url, anchor, section, rationale}]
-  fixed:       [{old_url, new_url, reason}]
+  fixed:       [{old_url, new_url, reason, placement}]  # redirects + broken-link replacements; placement = "same spot" or "moved to <section>"
   broken_needs_review: [{url, status_code, suggested_replacement}]
   total: <literal count, non-CTA>
   cap_range: [min, max]
@@ -180,7 +187,8 @@ internal_links:
 
 - The sitemap fetch (Step 1) is a hard gate, not optional polish — no article is "finished" until
   the live blog has been checked for topic-cluster siblings.
-- Preserve beats optimize: existing links are never casualties of cleanup.
+- Preserve beats optimize: working links are never casualties of cleanup; broken ones exit only via
+  a relevant replacement, not deletion.
 - If the floor can't be met with genuinely relevant live pages, say so and flag it — don't force an
   unrelated link in to hit the number.
 - When editing links inside Google Docs, beware `replaceAllText` styling bleed: it applies the first
