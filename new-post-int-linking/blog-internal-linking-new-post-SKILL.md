@@ -31,7 +31,11 @@ real published inventory, woven in contextually, and verified before the post is
 Same hard gate as the editing skill, but it runs before the outline, not after the draft:
 
 - Fetch the client's **live** published inventory — `<domain>/post-sitemap.xml` (WordPress/Yoast) or
-  `<domain>/sitemap.xml` and children; fallback is the rendered blog index via WebFetch.
+  `<domain>/sitemap.xml` and children; fallback is the rendered blog index via WebFetch; when the
+  SG-Gateway MCP is available, a further fallback is a DataForSEO indexed-page pull —
+  `dataforseo_google_search` with `site:<domain>` (add the topic term to narrow, e.g.
+  `site:example.com gutters`). Indexed-only, so brand-new posts may be missing — flag that gap when
+  this fallback is the source.
 - Identify every **topic-cluster sibling** of the new post's topic (for a gutters post: every
   `gutter-*` slug — installation cost, maintenance, materials, lifespan).
 - Identify every **service/product page** relevant to what the post will discuss.

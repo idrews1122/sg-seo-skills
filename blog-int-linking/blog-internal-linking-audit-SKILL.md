@@ -42,6 +42,11 @@ Never add or verify links from memory or from drafts sitting in the same folder.
 - **Fastest: the post sitemap** — `<domain>/post-sitemap.xml` (WordPress/Yoast convention) or
   `<domain>/sitemap.xml` and its child sitemaps. This lists every published post directly.
 - Fallback: the rendered blog index page(s) via WebFetch.
+- Fallback (SG-Gateway MCP available): a DataForSEO indexed-page pull — `dataforseo_google_search`
+  with `site:<domain>` (add the topic term to narrow, e.g. `site:example.com gutters`). Returns the
+  client's Google-indexed pages when the sitemap and blog index are both unreachable (WAF-blocked,
+  no sitemap, JS-rendered index). Caveat: it only surfaces indexed pages, so very new posts may be
+  missing — note that gap in the output when this fallback is the source.
 
 Scan the inventory for **topic-cluster siblings** of the article you're working on — for a gutters
 article, every `gutter-*` slug (installation cost, maintenance, materials, lifespan), not just the
