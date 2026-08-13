@@ -1,5 +1,5 @@
 ---
-name: internal-linking
+name: blog-int-linking
 description: >-
   Audits and optimizes the internal links of a single article on a client's site — building the
   real internal-link universe from the live sitemap first, preserving every existing link,
