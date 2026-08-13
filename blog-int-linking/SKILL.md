@@ -4,9 +4,10 @@ description: >-
   Audits and optimizes the internal links of a single article on a client's site — building the
   real internal-link universe from the live sitemap first, preserving every existing link,
   verifying each destination is live and actually supports the claim it's anchored to, adding
-  contextual links to topic-cluster sibling articles (prioritized over service pages), and
-  enforcing hard floors (3+ non-CTA internal links), responsive caps by word count, and
-  entity-name anchor placement. Includes the 8-check evidence-based link audit and the rule that
+  contextual links with an explicit mix — blog topic-cluster siblings carry the count, and every
+  genuinely relevant service/product page gets linked at its natural in-body mention — and
+  enforcing hard floors (3+ non-CTA internal links), responsive caps by word count, natural but
+  keyword-rich anchor text, and entity-name anchor placement. Includes the 8-check evidence-based link audit and the rule that
   AI-drafted content (ClickFlow etc.) arrives with fabricated internal URLs that must all be
   re-derived. Use whenever the user asks to check, fix, audit, add, or optimize internal links
   on an article or draft; asks "are these links right," "add internal links," "check the links,"
@@ -78,10 +79,20 @@ referenced sub-topic** (titles lie — open the page) → when two destinations 
 **underlinked** one (fewer existing inbound internal links) → stop at the cap unless the quality
 override applies.
 
-**Prioritize topic-cluster blog articles over service pages.** A service page is fine when it
-genuinely fits (CTA-adjacent mention, no better blog match), but it must not be the default or the
-majority of the article's internal links. Service pages get overused because there's one obvious URL
-per trade; the more specific sibling article is almost always the better link.
+**The explicit mix: blog siblings carry the count, service/product pages are a priority add where
+relevant.** Both page types belong in the article, with different jobs:
+
+- **Blog topic-cluster siblings** fill the bulk of the count. They're the more specific, more useful
+  match for in-body concepts, and they're the links that get skipped when nobody checks the sitemap.
+- **Service/product pages** (when the client has them) are prioritized wherever a relevant service is
+  genuinely discussed — sprinkled here and there through the body, not saved for the CTA alone. If
+  the article touches multiple relevant services (e.g., a storm-damage article that discusses both
+  roof repair and gutter replacement), link EACH relevant service page once, each at its most natural
+  in-body mention with anchor text relevant to that service. Don't skip a fitting service link just
+  because a blog sibling also exists — they serve different reader intents (learn more vs. hire).
+- What this does NOT license: linking a service page the article never really discusses, linking the
+  generic services index, or letting one homepage/services link stand in as the article's only
+  internal link. Relevance gates every service link; the mix rule adds fitting ones, never forces one.
 
 ## Counts: responsive cap + hard floor
 
@@ -107,7 +118,13 @@ Length is the **final** body's word count:
 3. **Every link is contextual — no call-outs, ever.** No "See also:", "Read our article about X,"
    "Check out our guide," "For more information, visit…". If you removed the hyperlink, the sentence
    must still read perfectly. Extend or rework the sentence so the link is a natural phrase inside it.
-4. **Descriptive anchors only.** No "click here," bare URLs, "this article," "learn more."
+4. **Natural but keyword-rich anchors.** The anchor should carry the destination page's target
+   keyword (or a close variant) while reading as an ordinary phrase in the sentence — "professional
+   [gutter installation]" linking the gutter-installation service page, not "click here," bare URLs,
+   "this article," or "learn more." Natural is the constraint, keyword-rich is the goal: if the exact
+   keyword can't sit in the sentence without contorting it, use the closest phrasing that flows —
+   never force the exact-match term in awkwardly, and never repeat the same anchor keyword across
+   multiple links in one article (that reads as stuffing and confuses which page owns the term).
 5. **Anchor the entity name, not the claim.** When a sentence names a thing and states a fact about
    it, the anchor goes on the name ("[Seamless aluminum gutters] install with far fewer joints…"),
    not on the fact or figure — numbers and comparative claims are volatile; the entity name is stable
